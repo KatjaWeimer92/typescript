@@ -1,6 +1,6 @@
 import './homework05.css'
 
-import { forceUsers } from "./data";
+import { forceUsers } from "./homework_05/data";
 export default function Homework05() {
   // console.log(forceUsers);
   return (
