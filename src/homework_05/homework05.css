@@ -1,46 +1,32 @@
-.lesson-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .lesson-container > div {
-    border: 1px solid #e8b6b6;
-    border-radius: 8px;
-    padding: 16px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
-  }
-  
-  .isDark {
-    background-color: #333;
-    color: #e23737ae;
-  }
-  
-  .isLight {
-    background-color: #7cb27d;
-    color: #151714;
-  }
-  
-  .lesson-container h4 {
-    margin: 0;
-    font-size: 1.2em;
-  }
-  
-  .lesson-container p {
-    margin: 8px 0;
-  }
-  
-  .lesson-container img {
-    border-radius: 8px;
-    margin-bottom: 8px;
-  }
-  
-  .lightsaber-color {
-    display: inline-block;
-    height: 10px;
-    width: 10px;
-    margin-right: 4px;
-  }
+.forceUsersGrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.forceUsersGrid h4 {
+  margin-bottom: 0;
+}
+
+.forceUsersGrid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:  10px;
+  border-radius: 8px;
+}
+
+.forceUsersGrid img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.dark {
+  background-color: rgb(255, 184, 184);
+}
+
+.light {
+  background-color: rgb(207, 207, 255);
+}
