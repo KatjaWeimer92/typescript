@@ -1,4 +1,7 @@
-import { log } from "console"
+//import { log } from "console"
+import Counter from "../../components/counter/counter";
+import MyButton from "../../components/myButton/MyButton";
+
 
 function Lesson07(){
     let hero:string = 'batman'
@@ -35,9 +38,44 @@ function Lesson07(){
 
     const heroes:ISuperhero[] = [hero1, hero2]
 
+    interface ISpaceHeroes {
+        isAlive?: boolean
+    }
+
+    type Animal = {
+        name: string;
+        weight: number;
+    }
+
+    type ExoticAnimal = Animal & {
+        isExotic: true,
+        country: string
+    }
+
+    let panda: ExoticAnimal = {
+        name: 'Po',
+        weight: 100,
+        country: 'China',
+        isExotic: true
+    }
 
 
+    console.log(panda);
+    
+ 
     console.log(heroes);
+
+    //generics
+
+    function makeArray<T>(first:T, second:T):T[] {
+        return[first, second]
+    }
+
+    const people = makeArray('Tom', 'Harry')
+
+    console.log(people);
+    
+
     
 
     return (
@@ -45,12 +83,21 @@ function Lesson07(){
             <h4>Lesson 07</h4>
             <p>Урок 'TypeScript часть 2' в комментариях к
                 коду урока 🐆</p>
-                <ul>
-                    {heroes.map(hero =>(
-                        <li key={hero.id}>🦸🏼‍♀️: {hero.name}</li>
+        <div>
+        {heroes.map(el => (
+        <div key={el.id}>
+            <h4>🦸🏼‍♀️: {el.nickname}</h4>
+            <p>Real name: {el.name}</p>
+        </div>
                 ))}
-                </ul>
-                
+        </div> 
+
+        <div>
+        <MyButton name='default'/>    
+        <MyButton name='click'/>  
+        <MyButton name='hello'/>  
+        </div> 
+        <Counter/>
         </div>
     )
 }
