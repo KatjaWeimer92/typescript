@@ -1,19 +1,19 @@
-import './myInput.css'
+//import './myInput.css'
+import styles from './myInput.module.css'
 
-interface MyInputProps {
+interface IInputProps {
   label?: string;
-  name?: string
+  name?: string;
+  type?: 'text' | 'password' | 'email' | 'number';
   placeholder?: string;
-  type?: string;
 }
 
-const MyInput: React.FC<MyInputProps> = ({ label, name, placeholder, type }) => {
-  return (
-      <div className="input-group">
-          <label>{label}</label>
-          <input name={name} type={type} placeholder={placeholder} />
-      </div>
-  );
-};
+export default function MyInput({ label = 'default', name='input', type='text', placeholder='default' }: IInputProps) {
 
-export default MyInput;
+  return (
+    <>
+      <label className={styles.label}>{label}</label>
+      <input type={type} name={name} placeholder={placeholder} />
+    </>
+  );
+}
