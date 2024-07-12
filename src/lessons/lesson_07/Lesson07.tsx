@@ -82,7 +82,7 @@ function Lesson07(){
         <div className="lesson-container">
             <h4>Lesson 07</h4>
             <p>Урок 'TypeScript часть 2' в комментариях к
-                коду урока 🐆</p>
+                коду урока 🌊</p>
         <div>
         {heroes.map(el => (
         <div key={el.id}>

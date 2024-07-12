@@ -12,6 +12,7 @@ root.render(
   <>
     <App />
     <Lesson07/>
+    <p>Хочу диплой</p>
     {/*<Homework05/>*/}
   </>
 );
