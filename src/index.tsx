@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Layout from './components/layout/Layout';
+//import Layout from './components/layout/Layout';
+//import StarWarsGalllery from './components/starWarsGallery/StarWarsGallery';
+import Lesson09 from './lessons/lesson_09/Lesson09';
 //import App from './app/App';
 //import Lesson06 from './lessons/lessons_06/Lesson06';
 //import Lesson07 from './lessons/lesson_07/Lesson07';
@@ -18,7 +20,9 @@ root.render(
     {/*<Lesson07/>*/}
      {/*<Lesson08/>*/}
     {/*<Homework05/>*/}
-    <Layout/>
+    {/*<Layout/>*/}
+    {/*<StarWarsGalllery/>*/}
+    <Lesson09/>
   </>
 );
 
