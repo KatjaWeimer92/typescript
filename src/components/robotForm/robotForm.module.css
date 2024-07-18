@@ -12,3 +12,7 @@
     border: none;
     border-radius: 3px;
   }
+
+  .loginForm > span {
+    color: red;
+  }

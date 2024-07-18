@@ -4,6 +4,7 @@ import './index.css';
 //import StarWarsGalllery from './components/starWarsGallery/StarWarsGallery';
 import Lesson09 from './lessons/lesson_09/Lesson09';
 import Lesson11 from './lessons/lesson_11/Lesson11';
+import Lesson12 from './lessons/lesson_12/Lesson12';
 //import App from './app/App';
 //import Lesson06 from './lessons/lessons_06/Lesson06';
 //import Lesson07 from './lessons/lesson_07/Lesson07';
@@ -24,7 +25,8 @@ root.render(
     {/*<Layout/>*/}
     {/*<StarWarsGalllery/>*/}
     {/*<Lesson09/>*/}
-    <Lesson11/>
+    {/*<Lesson11/>*/}
+    <Lesson12/>
   </>
 );
 
