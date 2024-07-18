@@ -3,6 +3,7 @@ import './index.css';
 //import Layout from './components/layout/Layout';
 //import StarWarsGalllery from './components/starWarsGallery/StarWarsGallery';
 import Lesson09 from './lessons/lesson_09/Lesson09';
+import Lesson11 from './lessons/lesson_11/Lesson11';
 //import App from './app/App';
 //import Lesson06 from './lessons/lessons_06/Lesson06';
 //import Lesson07 from './lessons/lesson_07/Lesson07';
@@ -22,7 +23,8 @@ root.render(
     {/*<Homework05/>*/}
     {/*<Layout/>*/}
     {/*<StarWarsGalllery/>*/}
-    <Lesson09/>
+    {/*<Lesson09/>*/}
+    <Lesson11/>
   </>
 );
 
