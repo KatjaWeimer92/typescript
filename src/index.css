@@ -16,6 +16,12 @@ code {
     monospace;
 }
 
+header > a {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+}
+
 .lesson-container {
   /* делаем flex контейнер */
   display: flex;
@@ -26,3 +32,4 @@ code {
   width: 70%;
   margin: auto;
 }
+

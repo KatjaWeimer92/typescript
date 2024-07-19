@@ -15,10 +15,28 @@
     align-items: center;
     justify-content: center;
   }
+  /*.header > a {
+    text-decoration: none;
+    color: white;
+    margin-right: 20px;
+  }*/
+
+  .header > a:hover {
+    text-decoration: underline;
+
+  }
   
   .main {
+    padding: 20px 0;
     /* чтобы main занимал все свободное место если контента мало */
     flex: 1;
+    display: flex;
+  /* меняем направление главной оси на вертикальное */
+  flex-direction: column;
+  /* выравниваем по центру */
+  align-items: center;
+  width: 70%;
+  margin: auto;
   }
   
   .footer {
@@ -28,4 +46,8 @@
     display: flex;
     align-items: center;
     justify-content: center
+  }
+
+  .active {
+    text-decoration: underline;
   }

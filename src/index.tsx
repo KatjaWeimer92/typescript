@@ -2,31 +2,28 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 //import Layout from './components/layout/Layout';
 //import StarWarsGalllery from './components/starWarsGallery/StarWarsGallery';
-import Lesson09 from './lessons/lesson_09/Lesson09';
-import Lesson11 from './lessons/lesson_11/Lesson11';
-import Lesson12 from './lessons/lesson_12/Lesson12';
-//import App from './app/App';
-//import Lesson06 from './lessons/lessons_06/Lesson06';
-//import Lesson07 from './lessons/lesson_07/Lesson07';
-//import Lesson08 from './lessons/lesson_08/Lesson08';
-//import Homework05 from './homework_05/Homework05';
-
+//import Lesson13 from './lessons/lesson_13/Lesson13';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import Layout from './components/layout/Layout';
+import StarWarsGallery from './components/starWarsGallery/StarWarsGallery';
+import FormGender from './components/formGender/FormGender';
+import RobotForm from './components/robotForm/RobotForm';
+import MyForm from './components/myForm/MyForm';
 
 
 const root = ReactDOM.createRoot(
 document.getElementById('root') as HTMLElement
 );
 root.render(
-  <>
-    {/*<App />*/}
-    {/*<Lesson07/>*/}
-     {/*<Lesson08/>*/}
-    {/*<Homework05/>*/}
-    {/*<Layout/>*/}
-    {/*<StarWarsGalllery/>*/}
-    {/*<Lesson09/>*/}
-    {/*<Lesson11/>*/}
-    <Lesson12/>
-  </>
+  <HashRouter>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+      <Route path='/' element={<StarWarsGallery/>}/>
+      <Route path='/gender-form' element={<FormGender/>}/>
+      <Route path='/robot-form' element={<RobotForm/>}/>
+      <Route path='/my-form' element={<MyForm/>}/>
+      </Route>
+    </Routes>
+  </HashRouter>
 );
 
