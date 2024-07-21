@@ -1,14 +1,15 @@
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import Layout from './components/layout/Layout';
-//import StarWarsGalllery from './components/starWarsGallery/StarWarsGallery';
-//import Lesson13 from './lessons/lesson_13/Lesson13';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import StarWarsGallery from './components/starWarsGallery/StarWarsGallery';
 import FormGender from './components/formGender/FormGender';
 import RobotForm from './components/robotForm/RobotForm';
-import MyForm from './components/myForm/MyForm';
+//import MyForm from './components/myForm/MyForm';
+import Feedback from './components/feedback/Feedback';
+import Counter from './components/counter/counter';
+import Homepage from './components/homepage/Homepage';
+import Header from './components/header/Header';
 
 
 const root = ReactDOM.createRoot(
@@ -18,10 +19,11 @@ root.render(
   <HashRouter>
     <Routes>
       <Route path='/' element={<Layout/>}>
-      <Route path='/' element={<StarWarsGallery/>}/>
+      <Route path='/homepage' element={<Homepage/>}/>
+      <Route path='/star-wars' element={<StarWarsGallery/>}/>
       <Route path='/gender-form' element={<FormGender/>}/>
-      <Route path='/robot-form' element={<RobotForm/>}/>
-      <Route path='/my-form' element={<MyForm/>}/>
+      <Route path='/counter' element={<Counter/>}/>
+      <Route path='/feedback' element={<Feedback/>}/>
       </Route>
     </Routes>
   </HashRouter>
