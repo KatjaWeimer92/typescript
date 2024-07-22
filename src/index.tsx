@@ -10,6 +10,7 @@ import Feedback from './components/feedback/Feedback';
 import Counter from './components/counter/counter';
 import Homepage from './components/homepage/Homepage';
 import Header from './components/header/Header';
+import Shop from './components/shop/Shop';
 
 
 const root = ReactDOM.createRoot(
@@ -24,6 +25,8 @@ root.render(
       <Route path='/gender-form' element={<FormGender/>}/>
       <Route path='/counter' element={<Counter/>}/>
       <Route path='/feedback' element={<Feedback/>}/>
+      <Route path='/shop' element={<Shop/>}/>
+      <Route path='*' element={<h1>Error 404 😵</h1>} />
       </Route>
     </Routes>
   </HashRouter>
