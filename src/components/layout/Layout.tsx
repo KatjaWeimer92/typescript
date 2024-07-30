@@ -1,19 +1,18 @@
-import {Link, Outlet, useLocation } from 'react-router-dom';
-import styles from './layout.module.css'
-import Header from '../header/Header';
+import { Outlet } from 'react-router-dom';
 import Footer from '../footer/Footer';
+import Header from '../header/Header';
+import styles from './layout.module.css';
 
 function Layout() {
- 
-  console.log(location.pathname);
-  
+
   return (
+
     <div className={styles.page}>
-      <Header/>
+      <Header />
       <main className={styles.main}>
-        <Outlet/>
+        <Outlet />
       </main>
-     <Footer/>
+      <Footer />
     </div>
   );
 }

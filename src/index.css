@@ -1,4 +1,5 @@
 * {
+  /* чтобы padding у всех контейнеров не увеличивал размер элемента */
   box-sizing: border-box;
 }
 
@@ -23,13 +24,9 @@ header > a {
 }
 
 .lesson-container {
-  /* делаем flex контейнер */
+  margin: auto;
   display: flex;
-  /* меняем направление главной оси на вертикальное */
   flex-direction: column;
-  /* выравниваем по центру */
   align-items: center;
   width: 70%;
-  margin: auto;
 }
-

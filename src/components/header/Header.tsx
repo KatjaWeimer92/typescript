@@ -1,19 +1,24 @@
-import React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
-import styles from './header.module.css'
-import {links} from './links'
+import { Link, useLocation } from 'react-router-dom';
+import styles from './header.module.css';
+
+import { links } from './links';
+// import { useAppSelector } from '../../redux/hooks';
 
 export default function Header() {
-  const location = useLocation()
-
-console.log(links);
+  // const { products} = useAppSelector(state => state.products);
+  const location = useLocation();
 
   return (
     <header className={styles.header}>
-      {links.map((el,index) =>(
-  <Link key={index}
-  className={location.pathname === el.pathname ? styles.active : ''}
-   to={el.pathname}>{el.title}</Link>))}
+      {/* {products.length> 0 && <span>{products[0].title}</span>} */}
+      {links.map((el, index) => (
+        <Link
+          key={index}
+          className={location.pathname === el.pathname ? styles.active : ''}
+          to={el.pathname}>{el.title}</Link>
+      ))}
+
     </header>
-  )
+  );
 }
+

@@ -7,10 +7,10 @@ const Lesson11 = () => {
       <div className={styles.loader}></div>
       <h3 className={styles.heading}>lesson 11</h3>
       <p>Библиотека для работы с формами Formik</p>
-      
-      <FormGender/>
+      <FormGender />
     </div>
   );
 };
 
 export default Lesson11
+

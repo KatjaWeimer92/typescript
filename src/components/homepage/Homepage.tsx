@@ -1,10 +1,7 @@
-//import React from 'react'
-import styles from './homepage.module.css'
-
-export default function Homepage () {
+export default function HomePage() {
   return (
     <div>
-    <h3>Homepage 🏡</h3>
+      <h3>HomePage 🏡</h3>
     </div>
   )
 }

@@ -1,5 +1,4 @@
-//import './myInput.css'
-import styles from './myInput.module.css'
+import styles from "./myInput.module.css";
 
 interface IInputProps {
   label?: string;

@@ -1,62 +1,53 @@
-// ## задание
+import { useEffect } from "react";
+import { getProducts } from '../../features/products/productsAction';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import Loader from '../loader/Loader';
+import ProductCard from '../productCard/ProductCard';
+import style from "./shop.module.css";
 
-import { useEffect, useState } from "react";
-import { number, string } from "yup";
-import styles from "./shop.module.css";
 
-// 1. Создайте новый компонент Shop.tsx.
-// 2. В нем сделайте fetch запрос на `https://fakestoreapi.com/products` с данными о продуктах
-// 3. Отобразите данные в карточках с grid стилизацией.
-// 4. Вынесите карточку с данными о продукте в отдельный компонент ProductCard.tsx
-// и данные прокидывайте через props.
-// https://fakestoreapi.com/products
+export interface IProduct {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
 
-export default function Shop() {
-  interface IProduct {
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    category: string;
-    image: string;
-    rating: {
-      rate: number;
-      count: number;
-    };
-  }
+const Shop = () => {
+  // * Работа с данными в компонентах через redux:
+  // * useAppDispatch - отправка actions, функций для работы с данными
+  // * useAppSelector() - получение данных из store
 
-  const [products, setProducts] = useState<IProduct[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  // кладем в переменную dispatch вызов useAppDispatch()
+  const dispatch = useAppDispatch();
+
+  // получаем данные из store через useAppSelector()
+  const { products, isLoading, error } = useAppSelector(state => state.products);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setLoading(false);
-      });
-  }, []);
+    // вызываем dispatch и внутри в аргументе вызываем нужный action
+    dispatch(getProducts());
+  }, [dispatch]);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
-      <h3>Shop 🛍️</h3>
-      <div className={styles.productGrid}>
-        {products.map((el) => (
-          <div className={styles.card} key={el.id}>
-            <div className={styles.namecard}>
-              <h4>{el.title} </h4>
-            </div>
-            
-            <img src={el.image} alt={el.title} />{" "}
-          
-          <div className={styles.price}> {el.price} $ </div>
-          </div>
-        ))}
-      </div>
+      {error && <h3>{error}</h3>}
+      {isLoading && <Loader />}
+      {products.length > 0 && (
+        <div className={style.container}>
+          {products.map((product) => (
+            <ProductCard key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} rate={product.rating.rate} count={product.rating.count} />
+          ))}
+        </div>
+      )}
     </>
   );
-}
+};
+export default Shop;
